@@ -14,8 +14,19 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.navigation.NavigationView;
 import com.nico.applijap.fragments.ConjuFragment;
-import com.nico.applijap.fragments.VocaFragment;
 import com.nico.applijap.fragments.HomeFragment;
+import com.nico.applijap.fragments.VocaFragment;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
@@ -26,6 +37,7 @@ public class MainActivity extends AppCompatActivity
     Fragment mConju;
     Fragment mActive;
     FragmentManager mFragmentManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +65,10 @@ public class MainActivity extends AppCompatActivity
         fragmentTransaction.replace(R.id.main_container, mHome);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
+
     }
+
+
 
     @Override
     public void onBackPressed() {
@@ -103,5 +118,20 @@ public class MainActivity extends AppCompatActivity
         fragmentTransaction.replace(R.id.main_container, mHome);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
+    }
+
+    @Override
+    public void onSubmitClicked() {
+
+    }
+
+    @Override
+    public void onBadClicked() {
+
+    }
+
+    @Override
+    public void onGoodClick() {
+
     }
 }

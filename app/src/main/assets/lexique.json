@@ -1,0 +1,75 @@
+[
+  {
+    "id": 1,
+    "type": "nom",
+    "name": "chat",
+    "katakana": "cat",
+    "kanji": "CAT",
+    "presentpo": "",
+    "presentneg": "",
+    "passepo": "",
+    "passeneg": "",
+    "interro": ""
+  },
+  {
+    "id": 2,
+    "type": "nom",
+    "name": "chien",
+    "katakana": "dog",
+    "kanji": "DOG",
+    "presentpo": "",
+    "presentneg": "",
+    "passepo": "",
+    "passeneg": "",
+    "interro": ""
+  },
+  {
+    "id": 3,
+    "type": "adjectif",
+    "name": "bleu",
+    "katakana": "blue",
+    "kanji": "BLUE",
+    "presentpo": "blueprepo",
+    "presentneg": "bluepreneg",
+    "passepo": "bluepassepo",
+    "passeneg": "bluepasseneg",
+    "interro": "blue?"
+  },
+  {
+    "id": 4,
+    "type": "adjectif",
+    "name": "grand",
+    "katakana": "tall",
+    "kanji": "TALL",
+    "presentpo": "tallprepo",
+    "presentneg": "btallpreneg",
+    "passepo": "tallpassepo",
+    "passeneg": "tallpasseneg",
+    "interro": "tall?"
+
+  },
+  {
+    "id": 5,
+    "type": "verbe",
+    "name": "acheter",
+    "katakana": "buy",
+    "kanji": "BUY",
+    "presentpo": "buypo",
+    "presentneg": "buyneg",
+    "passepo": "boughtpo",
+    "passeneg": "boughtneg",
+    "interro": "buy?"
+  },
+  {
+    "id": 6,
+    "type": "verbe",
+    "name": "vendre",
+    "katakana": "sell",
+    "kanji": "SELL",
+    "presentpo": "sellpo",
+    "presentneg": "sellneg",
+    "passepo": "sellpo",
+    "passeneg": "sellneg",
+    "interro": "sell?"
+  }
+]
