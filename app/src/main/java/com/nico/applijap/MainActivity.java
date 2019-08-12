@@ -109,17 +109,11 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public void onSubmitClicked() {
-
-    }
-
-    @Override
-    public void onBadClicked() {
-
-    }
-
-    @Override
     public void onGoodClick() {
-
+        FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
+        fragmentTransaction.detach(mVoca);
+        fragmentTransaction.attach(mVoca);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
     }
 }

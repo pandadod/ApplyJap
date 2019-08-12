@@ -3,61 +3,72 @@
     "id": 1,
     "type": "nom",
     "name": "chat",
-    "katakana": "cat",
-    "kanji": "CAT",
-    "presentpo": "",
-    "presentneg": "",
-    "passepo": "",
-    "passeneg": "",
-    "interro": ""
+    "katakana": "ねこ",
+    "kanji": "猫"
   },
   {
     "id": 2,
     "type": "nom",
     "name": "chien",
-    "katakana": "dog",
-    "kanji": "DOG",
-    "presentpo": "",
-    "presentneg": "",
-    "passepo": "",
-    "passeneg": "",
-    "interro": ""
+    "katakana": "いぬ",
+    "kanji": "犬"
   },
   {
     "id": 3,
     "type": "adjectif",
     "name": "bleu",
-    "katakana": "blue",
-    "kanji": "BLUE",
-    "presentpo": "blueprepo",
-    "presentneg": "bluepreneg",
-    "passepo": "bluepassepo",
-    "passeneg": "bluepasseneg",
-    "interro": "blue?"
+    "katakana": "あおい",
+    "kanji": "青い",
+    "declinaison": {
+      "presentpo": "あおい",
+      "presentneg": "あおくない",
+      "passepo": "あおかった",
+      "passeneg": "あおくなかった"
+    }
   },
   {
     "id": 4,
     "type": "adjectif",
     "name": "grand",
-    "katakana": "tall",
-    "kanji": "TALL",
-    "presentpo": "tallprepo",
-    "presentneg": "btallpreneg",
-    "passepo": "tallpassepo",
-    "passeneg": "tallpasseneg",
-    "interro": "tall?"
+    "katakana": "おおい",
+    "kanji": "多い",
+    "declinaison": {
+      "presentpo": "おおい",
+      "presentneg": "おおくない",
+      "passepo": "おおかった",
+      "passeneg": "おおくなかった"
+    }
   },
   {
     "id": 5,
     "type": "verbe",
     "name": "acheter",
-    "katakana": "buy",
-    "kanji": "BUY",
-    "presentpo": "buypo",
-    "presentneg": "buyneg",
-    "passepo": "boughtpo",
-    "passeneg": "boughtneg",
-    "interro": "buy?"
+    "katakana": "かう",
+    "kanji": "買う",
+    "masu": {
+      "presentpo": "acheter masuprp",
+      "presentneg": "acheter masuprn",
+      "passepo": "acheter masupap",
+      "passeneg": "acheter masupan"
+    },
+    "ta": {
+      "presentpo": "acheter taprp",
+      "presentneg": "acheter taprn",
+      "passepo": "acheter tapap",
+      "passeneg": "acheter tapan"
+    },
+    "nai": {
+      "presentpo": "acheter naiprp",
+      "presentneg": "acheter naiprn",
+      "passepo": "acheter naipap",
+      "passeneg": "acheter naipan"
+    },
+    "te": {
+      "presentpo": "acheter teprp",
+      "presentneg": "acheter teprn",
+      "passepo": "acheter tepap",
+      "passeneg": "acheter tepan"
+    }
   },
   {
     "id": 6,
@@ -65,10 +76,29 @@
     "name": "vendre",
     "katakana": "sell",
     "kanji": "SELL",
-    "presentpo": "sellpo",
-    "presentneg": "sellneg",
-    "passepo": "sellpo",
-    "passeneg": "sellneg",
-    "interro": "sell?"
+    "masu": {
+      "presentpo": "vendre masuprp",
+      "presentneg": "vendre masuprn",
+      "passepo": "vendre masupap",
+      "passeneg": "vendre masupan"
+    },
+    "ta": {
+      "presentpo": "vendre taprp",
+      "presentneg": "vendre taprn",
+      "passepo": "vendre tapap",
+      "passeneg": "vendre tapan"
+    },
+    "nai": {
+      "presentpo": "vendre naiprp",
+      "presentneg": "vendre naiprn",
+      "passepo": "vendre naipap",
+      "passeneg": "vendre naipan"
+    },
+    "te": {
+      "presentpo": "vendre teprp",
+      "presentneg": "vendre teprn",
+      "passepo": "vendre tepap",
+      "passeneg": "vendre tepan"
+    }
   }
 ]

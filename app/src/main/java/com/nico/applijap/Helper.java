@@ -30,17 +30,45 @@ public class Helper {
                 String katakana = object.getString("katakana");
                 String kanji = object.getString("kanji");
                 if (type.equalsIgnoreCase("nom")) {
-                    Word word = new Word(name, type, katakana, kanji);
-                    wordList.add(word);
+                    Nom nom = new Nom(name, type, katakana, kanji);
+                    wordList.add(nom);
+                } else if (type.equalsIgnoreCase("adjectif")) {
+                    JSONObject declinaison = object.getJSONObject("declinaison");
+                    String presentPo = declinaison.getString("presentpo");
+                    String presentNeg = declinaison.getString("presentneg");
+                    String passePo = declinaison.getString("passepo");
+                    String passeNeg = declinaison.getString("passeneg");
+                    Adjectif adjectif = new Adjectif(name, type, katakana, kanji, presentPo, presentNeg,
+                            passePo, passeNeg);
+                    wordList.add(adjectif);
                 } else {
-                    String presentPo = object.getString("presentpo");
-                    String presentNeg = object.getString("presentneg");
-                    String passePo = object.getString("passepo");
-                    String passeNeg = object.getString("passeneg");
-                    String interro = object.getString("interro");
-                    Word word = new Word(name, type, katakana, kanji, presentPo, presentNeg,
-                            passePo, passeNeg, interro);
-                    wordList.add(word);
+                    JSONObject masu = object.getJSONObject("masu");
+                    String masuPresentPo = masu.getString("presentpo");
+                    String masuPresentNeg = masu.getString("presentneg");
+                    String masuPassePo = masu.getString("passepo");
+                    String masuPasseNeg = masu.getString("passeneg");
+                    JSONObject ta = object.getJSONObject("ta");
+                    String taPresentPo = ta.getString("presentpo");
+                    String taPresentNeg = ta.getString("presentneg");
+                    String taPassePo = ta.getString("passepo");
+                    String taPasseNeg = ta.getString("passeneg");
+                    JSONObject nai = object.getJSONObject("nai");
+                    String naiPresentPo = nai.getString("presentpo");
+                    String naiPresentNeg = nai.getString("presentneg");
+                    String naiPassePo = nai.getString("passepo");
+                    String naiPasseNeg = nai.getString("passeneg");
+                    JSONObject te = object.getJSONObject("te");
+                    String tePresentPo = te.getString("presentpo");
+                    String tePresentNeg = te.getString("presentneg");
+                    String tePassePo = te.getString("passepo");
+                    String tePasseNeg = te.getString("passeneg");
+
+                    Verbe verbe = new Verbe(name, type, katakana, kanji,
+                            masuPresentPo, masuPresentNeg, masuPassePo, masuPasseNeg,
+                            taPresentPo, taPresentNeg, taPassePo, taPasseNeg,
+                            naiPresentPo, naiPresentNeg, naiPassePo, naiPasseNeg,
+                            tePresentPo, tePresentNeg, tePassePo, tePasseNeg);
+                    wordList.add(verbe);
                 }
             }
 

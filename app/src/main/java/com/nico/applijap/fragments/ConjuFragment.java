@@ -48,9 +48,5 @@ public class ConjuFragment extends Fragment {
 
         void onHomeClicked();
 
-        void onBadClicked();
-
-        void onGoodClick();
-
     }
 }

@@ -2,6 +2,7 @@ package com.nico.applijap.fragments;
 
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,6 +28,7 @@ public class VocaFragment extends Fragment {
     VocaListener vocalistener;
     TextView tvKata;
     TextView tvKanji;
+    Word wordAnswer;
     private List<Word> wordChoice = new ArrayList<>();
 
     public VocaFragment() {
@@ -44,11 +46,11 @@ public class VocaFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_voca, container, false);
-        Button btResult1 = view.findViewById(R.id.btResult);
-        Button btResult2 = view.findViewById(R.id.btResult2);
-        Button btResult3 = view.findViewById(R.id.btResult3);
-        Button btResult4 = view.findViewById(R.id.btResult4);
-        List<Button> buttonList = new ArrayList<>();
+        final Button btResult1 = view.findViewById(R.id.btResult);
+        final Button btResult2 = view.findViewById(R.id.btResult2);
+        final Button btResult3 = view.findViewById(R.id.btResult3);
+        final Button btResult4 = view.findViewById(R.id.btResult4);
+        final List<Button> buttonList = new ArrayList<>();
         buttonList.add(btResult1);
         buttonList.add(btResult2);
         buttonList.add(btResult3);
@@ -57,11 +59,29 @@ public class VocaFragment extends Fragment {
         tvKanji = view.findViewById(R.id.tvKanji);
 
         setQuestion(view, buttonList);
-
         btResult1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                vocalistener.onHomeClicked();
+                checkAnswer(btResult1, buttonList);
+
+            }
+        });
+        btResult2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkAnswer(btResult2, buttonList);
+            }
+        });
+        btResult3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkAnswer(btResult3, buttonList);
+            }
+        });
+        btResult4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkAnswer(btResult4, buttonList);
             }
         });
 
@@ -83,7 +103,6 @@ public class VocaFragment extends Fragment {
                         wordChoice.add(word);
                         count++;
                     }
-
                 }
             });
         } catch (IOException e) {
@@ -97,16 +116,29 @@ public class VocaFragment extends Fragment {
         }
         Random r = new Random();
         int index = r.nextInt((wordChoice.size() - 1) + 1);
-        Word word = wordChoice.get(index);
-        tvKata.setText(word.getKatakana());
-        tvKanji.setText(word.getKanji());
+        wordAnswer = wordChoice.get(index);
+        tvKata.setText(wordAnswer.getKatakana());
+        tvKanji.setText(wordAnswer.getKanji());
+    }
+
+    private void checkAnswer(Button button, List<Button> buttonList) {
+        if (button.getText().equals(wordAnswer.getName())) {
+            vocalistener.onGoodClick();
+        } else {
+            for (int i = 0; i < buttonList.size(); i++) {
+                if (buttonList.get(i).getText().equals(wordAnswer.getName())) {
+                    buttonList.get(i).setTextColor(Color.GREEN);
+                } else {
+                    buttonList.get(i).setTextColor(Color.RED);
+                }
+            }
+        }
     }
 
     public interface VocaListener {
 
         void onHomeClicked();
 
-        void onSubmitClicked();
-
+        void onGoodClick();
     }
 }
