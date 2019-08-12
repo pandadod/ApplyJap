@@ -13,15 +13,17 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.navigation.NavigationView;
-import com.nico.applijap.fragments.GalleryFragment;
+import com.nico.applijap.fragments.ConjuFragment;
+import com.nico.applijap.fragments.VocaFragment;
 import com.nico.applijap.fragments.HomeFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
-        HomeFragment.HomeListener, GalleryFragment.GalleryListener {
+        HomeFragment.HomeListener, VocaFragment.VocaListener, ConjuFragment.ConjuListener {
 
     Fragment mHome;
-    Fragment mGallery;
+    Fragment mVoca;
+    Fragment mConju;
     Fragment mActive;
     FragmentManager mFragmentManager;
 
@@ -41,7 +43,8 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         mHome = new HomeFragment();
-        mGallery = new GalleryFragment();
+        mVoca = new VocaFragment();
+        mConju = new ConjuFragment();
         mActive = mHome;
 
         mFragmentManager = getSupportFragmentManager();
@@ -67,10 +70,10 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
-            onHomeClicked();
-        } else if (id == R.id.nav_gallery) {
-            onGalleryClicked();
+        if (id == R.id.nav_voca) {
+            onVocaClicked();
+        } else if (id == R.id.nav_conju) {
+            onConjuClicked();
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -79,9 +82,17 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public void onGalleryClicked() {
+    public void onVocaClicked() {
         FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.main_container, mGallery);
+        fragmentTransaction.replace(R.id.main_container, mVoca);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
+    @Override
+    public void onConjuClicked() {
+        FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.main_container, mConju);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }

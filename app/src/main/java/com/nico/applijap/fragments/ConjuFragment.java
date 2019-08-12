@@ -13,49 +13,40 @@ import androidx.fragment.app.Fragment;
 import com.nico.applijap.R;
 
 
-public class HomeFragment extends Fragment {
+public class ConjuFragment extends Fragment {
 
-    HomeListener listener;
+    ConjuListener conjulistener;
 
-    public HomeFragment() {
+    public ConjuFragment() {
         // Required empty public constructor
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        listener = (HomeListener) context;
+        conjulistener = (ConjuListener) context;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_conju, container, false);
 
-        Button btVoca = view.findViewById(R.id.btVoca);
-        btVoca.setOnClickListener(new View.OnClickListener() {
+        Button btSubmit = view.findViewById(R.id.btSubmit);
+        btSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listener.onVocaClicked();
-            }
-        });
-
-        Button btConju = view.findViewById(R.id.btConju);
-        btConju.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                listener.onConjuClicked();
+                conjulistener.onHomeClicked();
             }
         });
 
         return view;
     }
 
-    public interface HomeListener {
+    public interface ConjuListener {
 
-        void onVocaClicked();
+        void onHomeClicked();
 
-        void onConjuClicked();
     }
 }

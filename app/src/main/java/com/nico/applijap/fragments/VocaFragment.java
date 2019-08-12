@@ -13,38 +13,38 @@ import androidx.fragment.app.Fragment;
 import com.nico.applijap.R;
 
 
-public class GalleryFragment extends Fragment {
+public class VocaFragment extends Fragment {
 
-    GalleryListener listener;
+    VocaListener vocalistener;
 
-    public GalleryFragment() {
+    public VocaFragment() {
         // Required empty public constructor
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        listener = (GalleryListener) context;
+        vocalistener = (VocaListener) context;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_gallery, container, false);
+        View view = inflater.inflate(R.layout.fragment_voca, container, false);
 
-        Button btHome = view.findViewById(R.id.btHome);
-        btHome.setOnClickListener(new View.OnClickListener() {
+        Button btResult1 = view.findViewById(R.id.btResult);
+        btResult1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listener.onHomeClicked();
+                vocalistener.onHomeClicked();
             }
         });
 
         return view;
     }
 
-    public interface GalleryListener {
+    public interface VocaListener {
 
         void onHomeClicked();
 
