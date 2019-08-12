@@ -6,6 +6,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class Helper {
             inputStream.read(buffer);
             inputStream.close();
 
-            json = new String(buffer, "UTF-8");
+            json = new String(buffer, StandardCharsets.UTF_8);
             JSONArray jsonArray = new JSONArray(json);
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject object = jsonArray.getJSONObject(i);
@@ -31,8 +32,7 @@ public class Helper {
                 if (type.equalsIgnoreCase("nom")) {
                     Word word = new Word(name, type, katakana, kanji);
                     wordList.add(word);
-                }
-                else {
+                } else {
                     String presentPo = object.getString("presentpo");
                     String presentNeg = object.getString("presentneg");
                     String passePo = object.getString("passepo");
@@ -51,6 +51,7 @@ public class Helper {
         }
         listener.onVocaLoaded(wordList);
     }
+
     public interface VocaListener {
         void onVocaLoaded(List<Word> wordList);
     }

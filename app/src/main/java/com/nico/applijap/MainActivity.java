@@ -17,17 +17,6 @@ import com.nico.applijap.fragments.ConjuFragment;
 import com.nico.applijap.fragments.HomeFragment;
 import com.nico.applijap.fragments.VocaFragment;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
         HomeFragment.HomeListener, VocaFragment.VocaListener, ConjuFragment.ConjuListener {
@@ -67,7 +56,6 @@ public class MainActivity extends AppCompatActivity
         fragmentTransaction.commit();
 
     }
-
 
 
     @Override

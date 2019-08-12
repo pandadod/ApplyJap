@@ -18,18 +18,16 @@ import com.nico.applijap.Word;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
-import java.util.Set;
 
 
 public class VocaFragment extends Fragment {
 
     VocaListener vocalistener;
-    private List<Word> wordChoice = new ArrayList<>();
     TextView tvKata;
     TextView tvKanji;
+    private List<Word> wordChoice = new ArrayList<>();
 
     public VocaFragment() {
         // Required empty public constructor
@@ -70,7 +68,7 @@ public class VocaFragment extends Fragment {
         return view;
     }
 
-    private void setQuestion (View view, List<Button> buttonList) {
+    private void setQuestion(View view, List<Button> buttonList) {
         try {
             InputStream inputStream = view.getContext().getAssets().open("lexique.json");
             Helper.getJson(inputStream, new Helper.VocaListener() {
@@ -80,7 +78,7 @@ public class VocaFragment extends Fragment {
                     int count = 0;
                     while (count < 4) {
                         Random r = new Random();
-                        int index = r.nextInt((wordList.size()-1) + 1);
+                        int index = r.nextInt((wordList.size() - 1) + 1);
                         Word word = wordList.get(index);
                         wordChoice.add(word);
                         count++;
@@ -98,7 +96,7 @@ public class VocaFragment extends Fragment {
             countWord++;
         }
         Random r = new Random();
-        int index = r.nextInt((wordChoice.size()-1) + 1);
+        int index = r.nextInt((wordChoice.size() - 1) + 1);
         Word word = wordChoice.get(index);
         tvKata.setText(word.getKatakana());
         tvKanji.setText(word.getKanji());
