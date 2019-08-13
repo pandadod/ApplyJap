@@ -15,6 +15,8 @@ public class Helper {
     public static void getJson(InputStream inputStream, final VocaListener listener) {
         String json;
         List<Word> wordList = new ArrayList<>();
+        List<Verbe> verbeList = new ArrayList<>();
+        List<Adjectif> adjectifList = new ArrayList<>();
         try {
             int size = inputStream.available();
             byte[] buffer = new byte[size];
@@ -41,6 +43,7 @@ public class Helper {
                     Adjectif adjectif = new Adjectif(name, type, katakana, kanji, presentPo, presentNeg,
                             passePo, passeNeg);
                     wordList.add(adjectif);
+                    adjectifList.add(adjectif);
                 } else {
                     JSONObject masu = object.getJSONObject("masu");
                     String masuPresentPo = masu.getString("presentpo");
@@ -69,6 +72,7 @@ public class Helper {
                             naiPresentPo, naiPresentNeg, naiPassePo, naiPasseNeg,
                             tePresentPo, tePresentNeg, tePassePo, tePasseNeg);
                     wordList.add(verbe);
+                    verbeList.add(verbe);
                 }
             }
 

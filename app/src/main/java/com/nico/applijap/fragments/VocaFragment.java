@@ -8,8 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.nico.applijap.Helper;
@@ -25,10 +27,10 @@ import java.util.Random;
 
 public class VocaFragment extends Fragment {
 
-    VocaListener vocalistener;
-    TextView tvKata;
-    TextView tvKanji;
-    Word wordAnswer;
+    private VocaListener vocalistener;
+    private TextView tvKata;
+    private TextView tvKanji;
+    private Word wordAnswer;
     private List<Word> wordChoice = new ArrayList<>();
 
     public VocaFragment() {
@@ -42,7 +44,7 @@ public class VocaFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_voca, container, false);
@@ -55,40 +57,52 @@ public class VocaFragment extends Fragment {
         buttonList.add(btResult2);
         buttonList.add(btResult3);
         buttonList.add(btResult4);
+        ImageButton ibReverso = view.findViewById(R.id.ibReverso);
+        final int[] counterRevereso = {0};
+        ibReverso.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                counterRevereso[0]++;
+                if (counterRevereso[0] % 2 == 0) {
+                    japToFrench(view, buttonList);
+                } else {
+                    frenchToJap(view, buttonList);
+                }
+            }
+        });
         tvKata = view.findViewById(R.id.tvKatakana);
         tvKanji = view.findViewById(R.id.tvKanji);
 
-        setQuestion(view, buttonList);
+        japToFrench(view, buttonList);
         btResult1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                checkAnswer(btResult1, buttonList);
-
+                choiceCheck(v, counterRevereso, btResult1, buttonList);
             }
         });
         btResult2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                checkAnswer(btResult2, buttonList);
+                choiceCheck(v, counterRevereso, btResult2, buttonList);
             }
         });
         btResult3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                checkAnswer(btResult3, buttonList);
+                choiceCheck(v, counterRevereso, btResult3, buttonList);
             }
         });
         btResult4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                checkAnswer(btResult4, buttonList);
+                choiceCheck(v, counterRevereso, btResult4, buttonList);
             }
         });
 
         return view;
     }
 
-    private void setQuestion(View view, List<Button> buttonList) {
+    private void setQuestion(View view) {
         try {
             InputStream inputStream = view.getContext().getAssets().open("lexique.json");
             Helper.getJson(inputStream, new Helper.VocaListener() {
@@ -108,10 +122,15 @@ public class VocaFragment extends Fragment {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private void japToFrench(View view, List<Button> buttonList) {
+        setQuestion(view);
         int countWord = 0;
         for (Word word : wordChoice) {
             String name = word.getName();
             buttonList.get(countWord).setText(name);
+            buttonList.get(countWord).setTextColor(Color.WHITE);
             countWord++;
         }
         Random r = new Random();
@@ -121,9 +140,27 @@ public class VocaFragment extends Fragment {
         tvKanji.setText(wordAnswer.getKanji());
     }
 
-    private void checkAnswer(Button button, List<Button> buttonList) {
+    private void frenchToJap(View view, List<Button> buttonList) {
+        setQuestion(view);
+        int countWord = 0;
+        for (Word word : wordChoice) {
+            String kana = word.getKatakana();
+            String kanji = word.getKanji();
+            String name = kana + " / " + kanji;
+            buttonList.get(countWord).setText(name);
+            buttonList.get(countWord).setTextColor(Color.WHITE);
+            countWord++;
+        }
+        Random r = new Random();
+        int index = r.nextInt((wordChoice.size() - 1) + 1);
+        wordAnswer = wordChoice.get(index);
+        tvKata.setText(wordAnswer.getName());
+        tvKanji.setText(null);
+    }
+
+    private void checkAnswerJapToFrench(View view, Button button, List<Button> buttonList) {
         if (button.getText().equals(wordAnswer.getName())) {
-            vocalistener.onGoodClick();
+            japToFrench(view, buttonList);
         } else {
             for (int i = 0; i < buttonList.size(); i++) {
                 if (buttonList.get(i).getText().equals(wordAnswer.getName())) {
@@ -132,6 +169,31 @@ public class VocaFragment extends Fragment {
                     buttonList.get(i).setTextColor(Color.RED);
                 }
             }
+        }
+    }
+
+    private void checkAnswerFrenchToJap(View view, Button button, List<Button> buttonList) {
+        String kana = wordAnswer.getKatakana();
+        String kanji = wordAnswer.getKanji();
+        String name = kana + " / " + kanji;
+        if (button.getText().equals(name)) {
+            frenchToJap(view, buttonList);
+        } else {
+            for (int i = 0; i < buttonList.size(); i++) {
+                if (buttonList.get(i).getText().equals(name)) {
+                    buttonList.get(i).setTextColor(Color.GREEN);
+                } else {
+                    buttonList.get(i).setTextColor(Color.RED);
+                }
+            }
+        }
+    }
+
+    private void choiceCheck(View view, int[] counterRevereso, Button button, List<Button> buttonList) {
+        if (counterRevereso[0] % 2 == 0) {
+            checkAnswerJapToFrench(view, button, buttonList);
+        } else {
+            checkAnswerFrenchToJap(view, button, buttonList);
         }
     }
 
