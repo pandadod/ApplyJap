@@ -3,6 +3,7 @@ package com.nico.applijap;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -13,17 +14,19 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.navigation.NavigationView;
+import com.nico.applijap.fragments.AdjectifFragment;
 import com.nico.applijap.fragments.ConjuFragment;
 import com.nico.applijap.fragments.HomeFragment;
 import com.nico.applijap.fragments.VocaFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
-        HomeFragment.HomeListener, VocaFragment.VocaListener, ConjuFragment.ConjuListener {
+        HomeFragment.HomeListener, VocaFragment.VocaListener, ConjuFragment.ConjuListener, AdjectifFragment.AdjListener {
 
     Fragment mHome;
     Fragment mVoca;
     Fragment mConju;
+    Fragment mAdjectif;
     Fragment mActive;
     FragmentManager mFragmentManager;
 
@@ -46,6 +49,7 @@ public class MainActivity extends AppCompatActivity
         mHome = new HomeFragment();
         mVoca = new VocaFragment();
         mConju = new ConjuFragment();
+        mAdjectif = new AdjectifFragment();
         mActive = mHome;
 
         mFragmentManager = getSupportFragmentManager();
@@ -69,7 +73,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
@@ -77,7 +81,10 @@ public class MainActivity extends AppCompatActivity
             onVocaClicked();
         } else if (id == R.id.nav_conju) {
             onConjuClicked();
+        } else if (id == R.id.nav_adjectif) {
+            onAdjectifClicked();
         }
+
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -109,10 +116,9 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public void onGoodClick() {
+    public void onAdjectifClicked() {
         FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
-        fragmentTransaction.detach(mVoca);
-        fragmentTransaction.attach(mVoca);
+        fragmentTransaction.replace(R.id.main_container, mAdjectif);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }

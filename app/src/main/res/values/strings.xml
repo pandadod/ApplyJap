@@ -20,4 +20,8 @@
     <string name="reponse">réponse</string>
     <string name="submit">submit</string>
     <string name="reverso">reverso</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="adjectif">Adjectif</string>
 </resources>

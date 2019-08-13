@@ -100,5 +100,18 @@
       "passepo": "vendre tepap",
       "passeneg": "vendre tepan"
     }
+  },
+  {
+    "id": 7,
+    "type": "adjectif",
+    "name": "petit",
+    "katakana": "small",
+    "kanji": "SMALL",
+    "declinaison": {
+      "presentpo": "prepo",
+      "presentneg": "preneg",
+      "passepo": "papo",
+      "passeneg": "paneg"
+    }
   }
 ]

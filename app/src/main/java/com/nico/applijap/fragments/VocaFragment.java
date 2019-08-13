@@ -204,7 +204,5 @@ public class VocaFragment extends Fragment {
     public interface VocaListener {
 
         void onHomeClicked();
-
-        void onGoodClick();
     }
 }

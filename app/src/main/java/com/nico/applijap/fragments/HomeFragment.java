@@ -49,6 +49,14 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        Button btAdjectif = view.findViewById(R.id.btAdjectif);
+        btAdjectif.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.onAdjectifClicked();
+            }
+        });
+
         return view;
     }
 
@@ -57,5 +65,7 @@ public class HomeFragment extends Fragment {
         void onVocaClicked();
 
         void onConjuClicked();
+
+        void onAdjectifClicked();
     }
 }
