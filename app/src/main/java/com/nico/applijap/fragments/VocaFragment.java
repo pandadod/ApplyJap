@@ -18,6 +18,8 @@ import com.nico.applijap.Helper;
 import com.nico.applijap.R;
 import com.nico.applijap.Word;
 
+import org.json.JSONException;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -105,7 +107,7 @@ public class VocaFragment extends Fragment {
     private void setQuestion(View view) {
         try {
             InputStream inputStream = view.getContext().getAssets().open("lexique.json");
-            Helper.getJson(inputStream, new Helper.VocaListener() {
+            Helper.getJsonVoca(inputStream, new Helper.VocaListener() {
                 @Override
                 public void onVocaLoaded(List<Word> wordList) {
                     wordChoice.clear();
@@ -120,6 +122,8 @@ public class VocaFragment extends Fragment {
                 }
             });
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
             e.printStackTrace();
         }
     }
