@@ -46,16 +46,16 @@
     "katakana": "かう",
     "kanji": "買う",
     "masu": {
-      "presentpo": "acheter masuprp",
-      "presentneg": "acheter masuprn",
-      "passepo": "acheter masupap",
-      "passeneg": "acheter masupan"
+      "presentpo": "かいます",
+      "presentneg": "かいませｎ",
+      "passepo": "かいました",
+      "passeneg": "かいませんてした"
     },
     "ta": {
-      "presentpo": "acheter taprp",
-      "presentneg": "acheter taprn",
-      "passepo": "acheter tapap",
-      "passeneg": "acheter tapan"
+      "presentpo": "かいた",
+      "presentneg": "かわない",
+      "passepo": "かた",
+      "passeneg": "かわなかった"
     },
     "nai": {
       "presentpo": "acheter naiprp",
@@ -64,7 +64,7 @@
       "passeneg": "acheter naipan"
     },
     "te": {
-      "presentpo": "acheter teprp",
+      "presentpo": "かいて",
       "presentneg": "acheter teprn",
       "passepo": "acheter tepap",
       "passeneg": "acheter tepan"
@@ -105,13 +105,490 @@
     "id": 7,
     "type": "adjectif",
     "name": "petit",
-    "katakana": "small",
-    "kanji": "SMALL",
+    "katakana": "ちさい",
+    "kanji": "",
     "declinaison": {
-      "presentpo": "prepo",
-      "presentneg": "preneg",
-      "passepo": "papo",
-      "passeneg": "paneg"
+      "presentpo": "ちさい",
+      "presentneg": "ちさくない",
+      "passepo": "ちさかった",
+      "passeneg": "ちさくなかった"
     }
+  },
+  {
+    "id": 8,
+    "type": "adjectif",
+    "name": "brillant",
+    "katakana": "あかるい",
+    "kanji": "",
+    "declinaison": {
+      "presentpo": "あかるい",
+      "presentneg": "あかるくない",
+      "passepo": "あかるかった",
+      "passeneg": "あかるくなかった"
+    }
+  },
+  {
+    "id": 9,
+    "type": "adjectif",
+    "name": "chaleureux",
+    "katakana": "あたたかい",
+    "kanji": "",
+    "declinaison": {
+      "presentpo": "あたたかい",
+      "presentneg": "あたたくない",
+      "passepo": "あたたかった",
+      "passeneg": "あたたくなかった"
+    }
+  },
+  {
+    "id": 10,
+    "type": "adjectif",
+    "name": "nouveau / neuf",
+    "katakana": "あたらしい",
+    "kanji": "",
+    "declinaison": {
+      "presentpo": "あたらしい",
+      "presentneg": "あたらしくない",
+      "passepo": "あたらしかった",
+      "passeneg": "あたらしくなかった"
+    }
+  },
+  {
+    "id": 11,
+    "type": "adjectif",
+    "name": "chaud",
+    "katakana": "あつい",
+    "kanji": "",
+    "declinaison": {
+      "presentpo": "あつい",
+      "presentneg": "あつかった",
+      "passepo": "あつくない",
+      "passeneg": "あつくなかった"
+    }
+  },
+  {
+    "id": 12,
+    "type": "adjectif",
+    "name": "bien",
+    "katakana": "いい",
+    "kanji": "",
+    "declinaison": {
+      "presentpo": "",
+      "presentneg": "よくない",
+      "passepo": "よかった",
+      "passeneg": "よくなかった"
+    }
+  },
+  {
+    "id": 13,
+    "type": "adjectif",
+    "name": "occupé",
+    "katakana": "いそがしい",
+    "kanji": "",
+    "declinaison": {
+      "presentpo": "いそがしい",
+      "presentneg": "いそがしくない",
+      "passepo": "いそがしかった",
+      "passeneg": "いそがしくなかった"
+    }
+  },
+  {
+    "id": 14,
+    "type": "nom",
+    "name": "lycée",
+    "katakana": "こうこう",
+    "kanji": "高校"
+  },
+  {
+    "id": 15,
+    "type": "nom",
+    "name": "collège",
+    "katakana": "ちゅがっこう",
+    "kanji": "中格好"
+  },
+  {
+    "id": 16,
+    "type": "nom",
+    "name": "université",
+    "katakana": "だいかっこう",
+    "kanji": "大学校"
+  },
+  {
+    "id": 17,
+    "type": "nom",
+    "name": "animaux",
+    "katakana": "どうぶつ",
+    "kanji": "動物"
+  },
+  {
+    "id": 18,
+    "type": "nom",
+    "name": "mouton",
+    "katakana": "ひっじ",
+    "kanji": ""
+  },
+  {
+    "id": 19,
+    "type": "nom",
+    "name": "vache",
+    "katakana": "うし",
+    "kanji": "牛"
+  },
+  {
+    "id": 20,
+    "type": "nom",
+    "name": "tremblement de terre",
+    "katakana": "じしん",
+    "kanji": ""
+  },
+  {
+    "id": 21,
+    "type": "nom",
+    "name": "baseball",
+    "katakana": "やきゅう",
+    "kanji": ""
+  },
+  {
+    "id": 22,
+    "type": "nom",
+    "name": "comment",
+    "katakana": "どうやって",
+    "kanji": ""
+  },
+  {
+    "id": 23,
+    "type": "nom",
+    "name": "souffler",
+    "katakana": "ふく",
+    "kanji": ""
+  },
+  {
+    "id": 24,
+    "type": "nom",
+    "name": "planter",
+    "katakana": "うえる",
+    "kanji": ""
+  },
+  {
+    "id": 25,
+    "type": "nom",
+    "name": "dormir hôtel",
+    "katakana": "とまる",
+    "kanji": ""
+  },
+  {
+    "id": 26,
+    "type": "nom",
+    "name": "passer par",
+    "katakana": "とうる",
+    "kanji": ""
+  },
+  {
+    "id": 27,
+    "type": "nom",
+    "name": "offrir à quelqu'un",
+    "katakana": "あげる",
+    "kanji": ""
+  },
+  {
+    "id": 28,
+    "type": "nom",
+    "name": "offrir à 私",
+    "katakana": "くれる",
+    "kanji": ""
+  },
+  {
+    "id": 29,
+    "type": "nom",
+    "name": "recevoir",
+    "katakana": "もらう",
+    "kanji": ""
+  },
+  {
+    "id": 30,
+    "type": "nom",
+    "name": "jouer musique",
+    "katakana": "ひく",
+    "kanji": ""
+  },
+  {
+    "id": 31,
+    "type": "nom",
+    "name": "envoyer",
+    "katakana": "おくる",
+    "kanji": ""
+  },
+  {
+    "id": 32,
+    "type": "nom",
+    "name": "nager",
+    "katakana": "およぐ",
+    "kanji": ""
+  },
+  {
+    "id": 33,
+    "type": "nom",
+    "name": "écrire",
+    "katakana": "かく",
+    "kanji": "書く"
+  },
+  {
+    "id": 34,
+    "type": "nom",
+    "name": "vendre",
+    "katakana": "うる",
+    "kanji": ""
+  },
+  {
+    "id": 35,
+    "type": "nom",
+    "name": "conduire(vélo)",
+    "katakana": "こぐ",
+    "kanji": ""
+  },
+  {
+    "id": 36,
+    "type": "nom",
+    "name": "conduire",
+    "katakana": "うんでんする",
+    "kanji": ""
+  },
+  {
+    "id": 37,
+    "type": "nom",
+    "name": "monter(bus)",
+    "katakana": "のる",
+    "kanji": ""
+  },
+  {
+    "id": 38,
+    "type": "nom",
+    "name": "descendre(bus)",
+    "katakana": "おりる",
+    "kanji": ""
+  },
+  {
+    "id": 39,
+    "type": "nom",
+    "name": "fermer",
+    "katakana": "しめる",
+    "kanji": "閉める"
+  },
+  {
+    "id": 40,
+    "type": "nom",
+    "name": "ouvrir",
+    "katakana": "あける",
+    "kanji": "開ける"
+  },
+  {
+    "id": 41,
+    "type": "nom",
+    "name": "sortir",
+    "katakana": "だす",
+    "kanji": "出す"
+  },
+  {
+    "id": 44,
+    "type": "nom",
+    "name": "mettre dans",
+    "katakana": "いれる",
+    "kanji": ""
+  },
+  {
+    "id": 44,
+    "type": "nom",
+    "name": "poser",
+    "katakana": "おく",
+    "kanji": ""
+  },
+  {
+    "id": 45,
+    "type": "nom",
+    "name": "aider",
+    "katakana": "てつだう",
+    "kanji": "手伝う"
+  },
+  {
+    "id": 46,
+    "type": "nom",
+    "name": "apprendre",
+    "katakana": "ならう",
+    "kanji": ""
+  },
+  {
+    "id": 47,
+    "type": "nom",
+    "name": "enseigner",
+    "katakana": "おしえる",
+    "kanji": ""
+  },
+  {
+    "id": 48,
+    "type": "nom",
+    "name": "marcher",
+    "katakana": "あるく",
+    "kanji": ""
+  },
+  {
+    "id": 49,
+    "type": "nom",
+    "name": "se promener",
+    "katakana": "さんぽする",
+    "kanji": ""
+  },
+  {
+    "id": 50,
+    "type": "nom",
+    "name": "visiter",
+    "katakana": "たずねる",
+    "kanji": ""
+  },
+  {
+    "id": 51,
+    "type": "nom",
+    "name": "tourner",
+    "katakana": "まがる",
+    "kanji": ""
+  },
+  {
+    "id": 52,
+    "type": "nom",
+    "name": "traverser",
+    "katakana": "わたる",
+    "kanji": ""
+  },
+  {
+    "id": 53,
+    "type": "nom",
+    "name": "aller (habituel)",
+    "katakana": "かよう",
+    "kanji": ""
+  },
+  {
+    "id": 54,
+    "type": "nom",
+    "name": "habiter",
+    "katakana": "すむ",
+    "kanji": ""
+  },
+  {
+    "id": 55,
+    "type": "nom",
+    "name": "naître",
+    "katakana": "うまれる",
+    "kanji": "生まれる"
+  },
+  {
+    "id": 56,
+    "type": "nom",
+    "name": "devenir",
+    "katakana": "なる",
+    "kanji": ""
+  },
+  {
+    "id": 57,
+    "type": "nom",
+    "name": "penser",
+    "katakana": "おもう",
+    "kanji": ""
+  },
+  {
+    "id": 58,
+    "type": "nom",
+    "name": "réfléchir",
+    "katakana": "かんがえる",
+    "kanji": ""
+  },
+  {
+    "id": 59,
+    "type": "nom",
+    "name": "avoir confiance",
+    "katakana": "しんじる",
+    "kanji": ""
+  },
+  {
+    "id": 61,
+    "type": "nom",
+    "name": "oublier",
+    "katakana": "わすれる",
+    "kanji": ""
+  },
+  {
+    "id": 62,
+    "type": "nom",
+    "name": "emprunter",
+    "katakana": "かりる",
+    "kanji": ""
+  },
+  {
+    "id": 63,
+    "type": "nom",
+    "name": "rendre",
+    "katakana": "かえす",
+    "kanji": ""
+  },
+  {
+    "id": 63,
+    "type": "nom",
+    "name": "prêter",
+    "katakana": "かす",
+    "kanji": ""
+  },
+  {
+    "id": 64,
+    "type": "nom",
+    "name": "donner(pet)",
+    "katakana": "やる",
+    "kanji": ""
+  },
+  {
+    "id": 65,
+    "type": "nom",
+    "name": "fatiguer",
+    "katakana": "つかれる",
+    "kanji": ""
+  },
+  {
+    "id": 66,
+    "type": "nom",
+    "name": "être habitué",
+    "katakana": "なれる",
+    "kanji": ""
+  },
+  {
+    "id": 67,
+    "type": "nom",
+    "name": "perdre",
+    "katakana": "なくす",
+    "kanji": ""
+  },
+  {
+    "id": 68,
+    "type": "nom",
+    "name": "connaître",
+    "katakana": "しる",
+    "kanji": ""
+  },
+  {
+    "id": 69,
+    "type": "nom",
+    "name": "comprendre",
+    "katakana": "わかる",
+    "kanji": ""
+  },
+  {
+    "id": 70,
+    "type": "nom",
+    "name": "chercher",
+    "katakana": "さがす",
+    "kanji": ""
+  },
+  {
+    "id": 71,
+    "type": "nom",
+    "name": "passer du temps",
+    "katakana": "すごす",
+    "kanji": ""
   }
 ]
