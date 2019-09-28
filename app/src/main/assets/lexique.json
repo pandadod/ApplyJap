@@ -51,17 +51,11 @@
       "passepo": "かいました",
       "passeneg": "かいませんてした"
     },
-    "ta": {
+    "neutre": {
       "presentpo": "かいた",
       "presentneg": "かわない",
       "passepo": "かた",
       "passeneg": "かわなかった"
-    },
-    "nai": {
-      "presentpo": "acheter naiprp",
-      "presentneg": "acheter naiprn",
-      "passepo": "acheter naipap",
-      "passeneg": "acheter naipan"
     },
     "te": {
       "presentpo": "かいて",
@@ -82,17 +76,11 @@
       "passepo": "vendre masupap",
       "passeneg": "vendre masupan"
     },
-    "ta": {
-      "presentpo": "vendre taprp",
-      "presentneg": "vendre taprn",
-      "passepo": "vendre tapap",
-      "passeneg": "vendre tapan"
-    },
-    "nai": {
-      "presentpo": "vendre naiprp",
-      "presentneg": "vendre naiprn",
-      "passepo": "vendre naipap",
-      "passeneg": "vendre naipan"
+    "neutre": {
+      "presentpo": "vendre neutreprp",
+      "presentneg": "vendre neutreprn",
+      "passepo": "vendre neutrepap",
+      "passeneg": "vendre neutrepan"
     },
     "te": {
       "presentpo": "vendre teprp",

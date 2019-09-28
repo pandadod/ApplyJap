@@ -108,18 +108,15 @@ public class ConjuFragment extends Fragment {
 
     private String forme() {
         Random r = new Random();
-        int index = r.nextInt(3 + 1);
+        int index = r.nextInt(2 + 1);
         switch (index) {
             case 0: {
                 return "masu";
             }
             case 1: {
-                return "ta";
+                return "neutre";
             }
             case 2: {
-                return "nai";
-            }
-            case 3: {
                 return "te";
             }
         }
@@ -159,29 +156,17 @@ public class ConjuFragment extends Fragment {
         if (forme.equals("masu") && temps.equals("passé négatif")) {
             return verbe.getMasuPasseNeg();
         }
-        if (forme.equals("ta") && temps.equals("présent positif")) {
-            return verbe.getTaPresentPo();
+        if (forme.equals("neutre") && temps.equals("présent positif")) {
+            return verbe.getNeutrePresentPo();
         }
-        if (forme.equals("ta") && temps.equals("présent négatif")) {
-            return verbe.getTaPresentNeg();
+        if (forme.equals("neutre") && temps.equals("présent négatif")) {
+            return verbe.getNeutrePresentNeg();
         }
-        if (forme.equals("ta") && temps.equals("passé positif")) {
-            return verbe.getTaPassePo();
+        if (forme.equals("neutre") && temps.equals("passé positif")) {
+            return verbe.getNeutrePassePo();
         }
-        if (forme.equals("ta") && temps.equals("passé négatif")) {
-            return verbe.getTaPasseNeg();
-        }
-        if (forme.equals("nai") && temps.equals("présent positif")) {
-            return verbe.getNaiPresentPo();
-        }
-        if (forme.equals("nai") && temps.equals("présent négatif")) {
-            return verbe.getNaiPresentNeg();
-        }
-        if (forme.equals("nai") && temps.equals("passé positif")) {
-            return verbe.getNaiPassePo();
-        }
-        if (forme.equals("nai") && temps.equals("passé négatif")) {
-            return verbe.getNaiPasseNeg();
+        if (forme.equals("neutre") && temps.equals("passé négatif")) {
+            return verbe.getNeutrePasseNeg();
         }
         if (forme.equals("te") && temps.equals("présent positif")) {
             return verbe.getTePresentPo();

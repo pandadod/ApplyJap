@@ -6,14 +6,10 @@ public class Verbe extends Word {
     private String masuPresentNeg;
     private String masuPassePo;
     private String masuPasseNeg;
-    private String taPresentPo;
-    private String taPresentNeg;
-    private String taPassePo;
-    private String taPasseNeg;
-    private String naiPresentPo;
-    private String naiPresentNeg;
-    private String naiPassePo;
-    private String naiPasseNeg;
+    private String neutrePresentPo;
+    private String neutrePresentNeg;
+    private String neutrePassePo;
+    private String neutrePasseNeg;
     private String tePresentPo;
     private String tePresentNeg;
     private String tePassePo;
@@ -24,22 +20,17 @@ public class Verbe extends Word {
 
     public Verbe(String name, String type, String katakana, String kanji,
                  String masuPresentPo, String masuPresentNeg, String masuPassePo, String masuPasseNeg,
-                 String taPresentPo, String taPresentNeg, String taPassePo, String taPasseNeg,
-                 String naiPresentPo, String naiPresentNeg, String naiPassePo, String naiPasseNeg,
+                 String neutrePresentPo, String neutrePresentNeg, String neutrePassePo, String neutrePasseNeg,
                  String tePresentPo, String tePresentNeg, String tePassePo, String tePasseNeg) {
         super(name, type, katakana, kanji);
         this.masuPresentPo = masuPresentPo;
         this.masuPresentNeg = masuPresentNeg;
         this.masuPassePo = masuPassePo;
         this.masuPasseNeg = masuPasseNeg;
-        this.taPresentPo = taPresentPo;
-        this.taPresentNeg = taPresentNeg;
-        this.taPassePo = taPassePo;
-        this.taPasseNeg = taPasseNeg;
-        this.naiPresentPo = naiPresentPo;
-        this.naiPresentNeg = naiPresentNeg;
-        this.naiPassePo = naiPassePo;
-        this.naiPasseNeg = naiPasseNeg;
+        this.neutrePresentPo = neutrePresentPo;
+        this.neutrePresentNeg = neutrePresentNeg;
+        this.neutrePassePo = neutrePassePo;
+        this.neutrePasseNeg = neutrePasseNeg;
         this.tePresentPo = tePresentPo;
         this.tePresentNeg = tePresentNeg;
         this.tePassePo = tePassePo;
@@ -78,68 +69,36 @@ public class Verbe extends Word {
         this.masuPasseNeg = masuPasseNeg;
     }
 
-    public String getTaPresentPo() {
-        return taPresentPo;
+    public String getNeutrePresentPo() {
+        return neutrePresentPo;
     }
 
-    public void setTaPresentPo(String taPresentPo) {
-        this.taPresentPo = taPresentPo;
+    public void setNeutrePresentPo(String neutrePresentPo) {
+        this.neutrePresentPo = neutrePresentPo;
     }
 
-    public String getTaPresentNeg() {
-        return taPresentNeg;
+    public String getNeutrePresentNeg() {
+        return neutrePresentNeg;
     }
 
-    public void setTaPresentNeg(String taPresentNeg) {
-        this.taPresentNeg = taPresentNeg;
+    public void setNeutrePresentNeg(String neutrePresentNeg) {
+        this.neutrePresentNeg = neutrePresentNeg;
     }
 
-    public String getTaPassePo() {
-        return taPassePo;
+    public String getNeutrePassePo() {
+        return neutrePassePo;
     }
 
-    public void setTaPassePo(String taPassePo) {
-        this.taPassePo = taPassePo;
+    public void setNeutrePassePo(String neutrePassePo) {
+        this.neutrePassePo = neutrePassePo;
     }
 
-    public String getTaPasseNeg() {
-        return taPasseNeg;
+    public String getNeutrePasseNeg() {
+        return neutrePasseNeg;
     }
 
-    public void setTaPasseNeg(String taPasseNeg) {
-        this.taPasseNeg = taPasseNeg;
-    }
-
-    public String getNaiPresentPo() {
-        return naiPresentPo;
-    }
-
-    public void setNaiPresentPo(String naiPresentPo) {
-        this.naiPresentPo = naiPresentPo;
-    }
-
-    public String getNaiPresentNeg() {
-        return naiPresentNeg;
-    }
-
-    public void setNaiPresentNeg(String naiPresentNeg) {
-        this.naiPresentNeg = naiPresentNeg;
-    }
-
-    public String getNaiPassePo() {
-        return naiPassePo;
-    }
-
-    public void setNaiPassePo(String naiPassePo) {
-        this.naiPassePo = naiPassePo;
-    }
-
-    public String getNaiPasseNeg() {
-        return naiPasseNeg;
-    }
-
-    public void setNaiPasseNeg(String naiPasseNeg) {
-        this.naiPasseNeg = naiPasseNeg;
+    public void setNeutrePasseNeg(String neutrePasseNeg) {
+        this.neutrePasseNeg = neutrePasseNeg;
     }
 
     public String getTePresentPo() {

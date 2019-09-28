@@ -40,16 +40,11 @@ public class Helper {
                 String masuPresentNeg = masu.getString("presentneg");
                 String masuPassePo = masu.getString("passepo");
                 String masuPasseNeg = masu.getString("passeneg");
-                JSONObject ta = object.getJSONObject("ta");
-                String taPresentPo = ta.getString("presentpo");
-                String taPresentNeg = ta.getString("presentneg");
-                String taPassePo = ta.getString("passepo");
-                String taPasseNeg = ta.getString("passeneg");
-                JSONObject nai = object.getJSONObject("nai");
-                String naiPresentPo = nai.getString("presentpo");
-                String naiPresentNeg = nai.getString("presentneg");
-                String naiPassePo = nai.getString("passepo");
-                String naiPasseNeg = nai.getString("passeneg");
+                JSONObject neutre = object.getJSONObject("neutre");
+                String  neutrePresentPo = neutre.getString("presentpo");
+                String  neutrePresentNeg = neutre.getString("presentneg");
+                String  neutrePassePo = neutre.getString("passepo");
+                String  neutrePasseNeg = neutre.getString("passeneg");
                 JSONObject te = object.getJSONObject("te");
                 String tePresentPo = te.getString("presentpo");
                 String tePresentNeg = te.getString("presentneg");
@@ -58,8 +53,7 @@ public class Helper {
 
                 Verbe verbe = new Verbe(name, type, katakana, kanji,
                         masuPresentPo, masuPresentNeg, masuPassePo, masuPasseNeg,
-                        taPresentPo, taPresentNeg, taPassePo, taPasseNeg,
-                        naiPresentPo, naiPresentNeg, naiPassePo, naiPasseNeg,
+                        neutrePresentPo,  neutrePresentNeg,  neutrePassePo,  neutrePasseNeg,
                         tePresentPo, tePresentNeg, tePassePo, tePasseNeg);
                 wordList.add(verbe);
             }
@@ -82,16 +76,11 @@ public class Helper {
                 String masuPresentNeg = masu.getString("presentneg");
                 String masuPassePo = masu.getString("passepo");
                 String masuPasseNeg = masu.getString("passeneg");
-                JSONObject ta = object.getJSONObject("ta");
-                String taPresentPo = ta.getString("presentpo");
-                String taPresentNeg = ta.getString("presentneg");
-                String taPassePo = ta.getString("passepo");
-                String taPasseNeg = ta.getString("passeneg");
-                JSONObject nai = object.getJSONObject("nai");
-                String naiPresentPo = nai.getString("presentpo");
-                String naiPresentNeg = nai.getString("presentneg");
-                String naiPassePo = nai.getString("passepo");
-                String naiPasseNeg = nai.getString("passeneg");
+                JSONObject neutre = object.getJSONObject("neutre");
+                String  neutrePresentPo = neutre.getString("presentpo");
+                String  neutrePresentNeg = neutre.getString("presentneg");
+                String  neutrePassePo = neutre.getString("passepo");
+                String  neutrePasseNeg = neutre.getString("passeneg");
                 JSONObject te = object.getJSONObject("te");
                 String tePresentPo = te.getString("presentpo");
                 String tePresentNeg = te.getString("presentneg");
@@ -100,8 +89,7 @@ public class Helper {
 
                 Verbe verbe = new Verbe(name, type, katakana, kanji,
                         masuPresentPo, masuPresentNeg, masuPassePo, masuPasseNeg,
-                        taPresentPo, taPresentNeg, taPassePo, taPasseNeg,
-                        naiPresentPo, naiPresentNeg, naiPassePo, naiPasseNeg,
+                        neutrePresentPo,  neutrePresentNeg,  neutrePassePo,  neutrePasseNeg,
                         tePresentPo, tePresentNeg, tePassePo, tePasseNeg);
                 verbeList.add(verbe);
             }
